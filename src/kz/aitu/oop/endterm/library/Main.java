@@ -4,9 +4,11 @@ import kz.aitu.oop.endterm.library.data.PostgresDB;
 import kz.aitu.oop.endterm.library.data.interfaces.IDB;
 import kz.aitu.oop.endterm.library.repositories.BookRepo;
 import kz.aitu.oop.endterm.library.repositories.CustomerRepo;
+import kz.aitu.oop.endterm.library.repositories.EmployeeRepo;
 import kz.aitu.oop.endterm.library.repositories.OrderRepo;
 import kz.aitu.oop.endterm.library.repositories.interfaces.IBookRepo;
 import kz.aitu.oop.endterm.library.repositories.interfaces.ICustomerRepo;
+import kz.aitu.oop.endterm.library.repositories.interfaces.IEmployeeRepo;
 import kz.aitu.oop.endterm.library.repositories.interfaces.IOrderRepo;
 
 public class Main {
@@ -39,7 +41,8 @@ public class Main {
         IBookRepo repo1 = new BookRepo(db);
         ICustomerRepo repo2 = new CustomerRepo(db);
         IOrderRepo repo3 = new OrderRepo(db);
-        MyApplication app = new MyApplication(repo1, repo2, repo3);
+        IEmployeeRepo repo4 = new EmployeeRepo(db);
+        MyApplication app = new MyApplication(repo1, repo2, repo3, repo4);
         app.start();
     }
 }
